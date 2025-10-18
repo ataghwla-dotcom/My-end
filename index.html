@@ -20,13 +20,13 @@
       max-height: 300px;
       object-fit: cover;
       border-bottom: 2px solid #660066;
-      transition: 0.5s ease, transform 0.5s ease;
+      transition: 0.5s ease, transform 0.5s ease, filter 0.5s ease;
       opacity: 0; /* مخفية في البداية */
     }
 
-    /* عند مرور الماوس */
+    /* تأثير عند المرور بالماوس */
     img:hover {
-      filter: brightness(70%);
+      filter: brightness(70%) contrast(120%);
       transform: scale(1.05);
     }
 
@@ -35,14 +35,32 @@
       opacity: 1;
     }
 
+    /* العنوان */
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin-top: 20px;
       color: #b366ff;
-      text-shadow: 0 0 10px #550055;
+      text-shadow: 0 0 15px #550055, 0 0 25px #330033;
       transition: 1s ease;
     }
 
+    /* فقرة المقدمة */
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 20px 40px;
+      color: #ccc;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 1s ease;
+    }
+
+    body.loaded p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* شريط التنقل */
     nav {
       margin: 20px 0;
     }
@@ -51,29 +69,23 @@
       color: #eee;
       text-decoration: none;
       margin: 0 10px;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border: 1px solid #660066;
       border-radius: 8px;
       background-color: rgba(102, 0, 102, 0.2);
-      transition: 0.3s;
+      transition: 0.3s, transform 0.3s ease;
     }
 
     nav a:hover {
       background-color: #660066;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 20px 40px;
-      color: #ccc;
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="images/car.jpg" alt="غابة الظلال">
+    <img src="images/city.jpg" alt="غابة الظلال">
   </header>
 
   <h1>عهد الظلال</h1>
@@ -84,10 +96,11 @@
     <a href="page2.html">الفصل الأول</a>
     <a href="page3.html">الفصل الثاني</a>
     <a href="page4.html">الفصل الثالث</a>
+    <a href="page5.html">الفصل الرابعة</a>
   </nav>
 
   <script>
-    // عند تحميل الصفحة، نضيف class لإظهار الصور تدريجيًا
+    // عند تحميل الصفحة، نضيف class لإظهار الصور والنصوص تدريجيًا
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
     });

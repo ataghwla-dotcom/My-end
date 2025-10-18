@@ -2,125 +2,140 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>الشخصيات - عهد الظلال</title>
+  <title>عهد الظلال - القصة</title>
+  .quote-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px auto;
+  width: 80%;
+  font-style: italic;
+  color: #ccc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.quote-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
   <style>
     body {
-      background: linear-gradient(to bottom, #0b0b0f, #1a001f);
-      color: #eee;
-      font-family: "Cairo", sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 0;
+      font-family: "Cairo", sans-serif;
+      background-color: #0b0b0f;
+      color: #eee;
+      line-height: 1.8;
     }
 
-    h1 {
-      font-size: 2.8em;
-      margin: 20px 0;
-      color: #b366ff;
-      text-shadow: 0 0 15px #550055, 0 0 25px #330033;
-    }
-
-    .characters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px;
-    }
-
-    .character {
-      width: 150px;
+    /* رأس الصفحة */
+    header {
+      background: linear-gradient(to right, #1a001f, #330033);
+      padding: 20px;
       text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.8s ease;
-    }
-
-    body.loaded .character {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .character img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #660066;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .character img:hover {
-      transform: scale(1.05);
-      filter: brightness(80%) contrast(120%);
-    }
-
-    .character-name {
-      margin-top: 10px;
-      font-size: 1.1em;
-      color: #ccc;
-    }
-
-    nav {
-      margin: 20px 0;
+      color: #b366ff;
+      text-shadow: 0 0 10px #550055;
     }
 
     nav a {
       color: #eee;
       text-decoration: none;
       margin: 0 10px;
-      padding: 10px 16px;
+      padding: 8px 14px;
       border: 1px solid #660066;
-      border-radius: 8px;
+      border-radius: 6px;
       background-color: rgba(102, 0, 102, 0.2);
-      transition: 0.3s, transform 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
       background-color: #660066;
       transform: scale(1.1);
     }
+
+    /* قسم القصة */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #b366ff;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: auto;
+      color: #ccc;
+    }
+
+    /* قسم الشخصيات */
+    .mini-characters {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .mini-characters img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #660066;
+      transition: transform 0.3s ease;
+    }
+
+    .mini-characters img:hover {
+      transform: scale(1.1);
+    }
+
+    /* أسفل الصفحة */
+    footer {
+      background: #1a001f;
+      color: #999;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>الشخصيات</h1>
+  <header>
+    <h1>🌑 عهد الظلال 🌑</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="page2.html">الفصل الأول</a>
+      <a href="page3.html">الفصل الثاني</a>
+      <a href="page4.html">الفصل الثالث</a>
+      <a href="page5.html">الشخصيات</a>
+    </nav>
+  </header>
 
-  <div class="characters">
-    <div class="character">
-      <img src="images/gool.jpg" alt="البطل">
-      <div class="character-name">آرين</div>
-    </div>
-    <div class="character">
-      <img src="images/handman.jpg" alt="الشرير">
-      <div class="character-name">داركوس</div>
-    </div>
-    <div class="character">
-      <img src="images/cuteman.jpg" alt="الحليف">
-      <div class="character-name">ليا</div>
-    </div>
-    <div class="character">
-      <img src="images/gun.jpg" alt="المرشد">
-      <div class="character-name">ماسترون</div>
-    </div>
-    <div class="character">
-      <img src="images/domino.jpg" alt="الغامض">
-      <div class="character-name">نوكس</div>
-    </div>
-  </div>
+  <section>
+    <h2>القصة</h2>
+    <p>
+      في عالم غارق في الظلال، يولد عهد جديد يقلب ميزان النور والظلام.  
+      "آرين" الفتى الذي يحمل في دمه لعنة قديمة، يقف بين اختيارين:  
+      إنقاذ العالم... أو تركه يحترق تحت حكم داركوس سيد الظلال.
+    </p>
 
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="page2.html">الفصل الأول</a>
-    <a href="page3.html">الفصل الثاني</a>
-    <a href="page4.html">الفصل الثالث</a>
-    <a href="page5.html">الفصل الرابعة</a>
-  </nav>
+    <div class="mini-characters">
+      <img src="images/cutemafia.jpg" alt="آرين">
+      <img src="images/handman.jpg" alt="داركوس">
+      <img src="images/gool.jpg" alt="ليا">
+    </div>
+    <div class="quote-box">
+  <p>في عالمٍ تكسوه الظلال، يولد الأبطال من رحم الألم...</p>
+    </div>
+  </section>
 
-  <script>
-    // ظهور الشخصيات تدريجيًا عند تحميل الصفحة
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
-    });
-  </script>
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة - موقع رواية عهد الظلال</p>
+  </footer>
 
 </body>
-  </html>
+</html>
